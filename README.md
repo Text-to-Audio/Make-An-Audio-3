@@ -6,7 +6,7 @@ We will provide our implementation and pretrained models as open source in this 
 
 [![arXiv](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2305.18474)
 [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-blue)](https://huggingface.co/spaces/AIGC-Audio/Lumina-Audio)
-[![GitHub Stars](https://img.shields.io/github/stars/Text-to-Audio/Lumina-Audio?style=social)](https://github.com/Text-to-Audio/Lumina-Audio)
+[![GitHub Stars](https://img.shields.io/github/stars/Text-to-Audio/Make-An-Audio-3?style=social)](https://github.com/Text-to-Audio/Make-An-Audio-3)
 
 ## Use pretrained model
 We provide our implementation and pretrained models as open source in this repository.
@@ -14,11 +14,11 @@ We provide our implementation and pretrained models as open source in this repos
 Visit our [demo page](https://make-an-audio-2.github.io/) for audio samples.
 ## Quick Started
 ### Pretrained Models
-Simply download the weights from [![Hugging Face](https://huggingface.co/Alpha-VLLM/Lumina-T2Music).  
+Simply download the weights from [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-blue)](https://huggingface.co/Alpha-VLLM/Lumina-T2Music).  
 - Text Encoder: [FLAN-T5-Large](https://huggingface.co/google/flan-t5-large)
 - VAE: Make-An-Audio 2, finetuned from [Make an Audio](https://github.com/Text-to-Audio/Make-An-Audio)
 - Decoder: [Vocoder](https://github.com/NVIDIA/BigVGAN)
-- `Music` Checkpoints: [huggingface](https://huggingface.co/Alpha-VLLM/Lumina-T2Music), `Audio' Checkpoints: [huggingface]()
+- `Music` Checkpoints: [huggingface](https://huggingface.co/Alpha-VLLM/Lumina-T2Music), `Audio` Checkpoints: [huggingface]()
 
 ### Generate audio/music from text
 ```
