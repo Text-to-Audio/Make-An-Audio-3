@@ -1,0 +1,8 @@
+__pycache__
+*.pyc
+logs
+.idea
+.DS_Store
+processed
+useful_ckpts/*
+genwavs
