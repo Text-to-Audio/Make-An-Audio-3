@@ -38,7 +38,7 @@ python3 scripts/txt2audio_for_2cap_flow.py
 ### Generate audio/music from video
 ```
 python3 scripts/video2audio_flow.py 
---outdir output_dir -r  checkpoints_last.ckpt  -b configs/txt2audio-cfm1-cfg-LargeDiT3.yaml --scale 3.0 
+--outdir output_dir -r  checkpoints_last.ckpt  -b configs/video2audio-cfm1-cfg-LargeDiT1-moe.yaml --scale 3.0 
 --vocoder-ckpt useful_ckpts/bigvnat --test-dataset vggsound 
 ```
 
