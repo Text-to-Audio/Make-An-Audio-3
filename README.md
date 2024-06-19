@@ -5,20 +5,24 @@ PyTorch Implementation of [Lumina-t2x](https://arxiv.org/abs/2405.05945)
 We will provide our implementation and pretrained models as open source in this repository recently.
 
 [![arXiv](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2305.18474)
-[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-blue)](https://huggingface.co/spaces/AIGC-Audio/Lumina-Audio)
+[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-blue)](https://huggingface.co/spaces/AIGC-Audio/Make-An-Audio-3)
 [![GitHub Stars](https://img.shields.io/github/stars/Text-to-Audio/Make-An-Audio-3?style=social)](https://github.com/Text-to-Audio/Make-An-Audio-3)
 
 ## Use pretrained model
 We provide our implementation and pretrained models as open source in this repository.
 
 Visit our [demo page](https://make-an-audio-2.github.io/) for audio samples.
+
+## News
+- June, 2024: **[Make-An-Audio-3 (Lumina-Next)](https://arxiv.org/abs/2405.05945)** released in [Github](https://github.com/Text-to-Audio/Make-An-Audio-3).
+
+[//]: # (- May, 2024: **[Make-An-Audio-2]&#40;https://arxiv.org/abs/2207.06389&#41;** released in [Github]&#40;https://github.com/bytedance/Make-An-Audio-2&#41;.)
+[//]: # (- August, 2023: **[Make-An-Audio]&#40;https://arxiv.org/abs/2301.12661&#41; &#40;ICML 2022&#41;** released in [Github]&#40;https://github.com/Text-to-Audio/Make-An-Audio&#41;. )
+
 ## Quick Started
 ### Pretrained Models
-Simply download the weights from [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-blue)](https://huggingface.co/Alpha-VLLM/Lumina-T2Music).  
-- Text Encoder: [FLAN-T5-Large](https://huggingface.co/google/flan-t5-large)
-- VAE: Make-An-Audio 2, finetuned from [Make an Audio](https://github.com/Text-to-Audio/Make-An-Audio)
-- Decoder: [Vocoder](https://github.com/NVIDIA/BigVGAN)
-- `Music` Checkpoints: [huggingface](https://huggingface.co/Alpha-VLLM/Lumina-T2Music), `Audio` Checkpoints: [huggingface]()
+
+Simply download the weights from [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-blue)](https://huggingface.co/spaces/AIGC-Audio/Make-An-Audio-3/tree/main/useful_ckpts)
 
 ### Generate audio/music from text
 ```
@@ -86,7 +90,7 @@ python main.py --base configs/research/text2audio/text2audio-ConcatDiT-ae1dnat_S
 ```
 
 ## Evaluation
-Please refer to [Make-An-Audio](https://github.com/Text-to-Audio/Make-An-Audio?tab=readme-ov-file#evaluation)
+Please refer to [Make-An-Audio](https://github.com/Text-to-Audio/Make-An-Audio?tab=readme-ov-file#evaluation).
 
 
 ## Acknowledgements
