@@ -2,14 +2,14 @@
 
 PyTorch Implementation of [Lumina-t2x](https://arxiv.org/abs/2405.05945)
 
-We will provide our implementation and pretrained models as open source in this repository recently.
+We will provide our implementation and pre-trained models as open-source in this repository recently.
 
 [![arXiv](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2305.18474)
 [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-blue)](https://huggingface.co/spaces/AIGC-Audio/Make-An-Audio-3)
 [![GitHub Stars](https://img.shields.io/github/stars/Text-to-Audio/Make-An-Audio-3?style=social)](https://github.com/Text-to-Audio/Make-An-Audio-3)
 
-## Use pretrained model
-We provide our implementation and pretrained models as open source in this repository.
+## Use a pre-trained model
+We provide our implementation and pre-trained models as open-source in this repository.
 
 Visit our [demo page](https://make-an-audio-2.github.io/) for audio samples.
 
@@ -67,13 +67,13 @@ python3 scripts/video2audio_flow.py
 ```
 
 ## Train
-### Data preparation
-- We can't provide the dataset download link for copyright issues. We provide the process code to generate melspec, count audio duration and generate structured caption.  
+### Data Preparation
+- We can't provide the dataset download link for copyright issues. We provide the process code to generate melspec, count audio duration, and generate structured captions.  
 - Before training, we need to construct the dataset information into a tsv file, which includes name (id for each audio), dataset (which dataset the audio belongs to), audio_path (the path of .wav file),caption (the caption of the audio) ,mel_path (the processed melspec file path of each audio), duration (the duration of the audio). We provide a tsv file of audiocaps test set: audiocaps_test_struct.tsv as a sample.
 - We provide a tsv file of the audiocaps test set: ./audiocaps_test_16000_struct.tsv as a sample.
 
 ### Generate the melspec file of audio
-Assume you have already got a tsv file to link each caption to its audio_path, which mean the tsv_file have "name","audio_path","dataset" and "caption" columns in it.
+Assume you have already got a tsv file to link each caption to its audio_path, which means the tsv_file have "name","audio_path","dataset" and "caption" columns in it.
 To get the melspec of audio, run the following command, which will save mels in ./processed
 ```
 python preprocess/mel_spec.py --tsv_path tmp.tsv --num_gpus 1 --max_duration 10
@@ -92,12 +92,12 @@ python preprocess/n2s_by_openai.py --tsv_path tmp.tsv
 ```
 
 ### Place Tsv files
-After generated structure caption, put the tsv with structed caption to ./data/main_spec_dir . And put tsv files without structured caption to ./data/no_struct_dir
+After generating the structure caption, put the tsv with the structed caption to ./data/main_spec_dir . And put tsv files without structured caption to ./data/no_struct_dir
 
-Modify the config data.params.main_spec_dir and  data.params.main_spec_dir.other_spec_dir_path respectively in config file configs/text2audio-ConcatDiT-ae1dnat_Skl20d2_struct2MLPanylen.yaml .
+Modify the config data.params.main_spec_dir and data.params.main_spec_dir.other_spec_dir_path respectively in config file configs/text2audio-ConcatDiT-ae1dnat_Skl20d2_struct2MLPanylen.yaml .
 
 ## Train variational autoencoder
-Assume we have processed several datasets, and save the .tsv files in tsv_dir/*.tsv . Replace data.params.spec_dir_path with tsv_dir in the config file. Then we can train VAE with the following command. If you don't have 8 gpus in your machine, you can replace --gpus 0,1,...,gpu_nums
+Assume we have processed several datasets, and save the .tsv files in tsv_dir/*.tsv . Replace data.params.spec_dir_path with tsv_dir in the config file. Then we can train VAE with the following command. If you don't have 8 GPUs in your machine, you can replace --GPUs 0,1,...,gpu_nums
 ```
 python main.py --base configs/research/autoencoder/autoencoder1d_kl20_natbig_r1_down2_disc2.yaml -t --gpus 0,1,2,3,4,5,6,7
 ```
