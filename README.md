@@ -35,8 +35,15 @@ Install [nvidia apex](https://github.com/nvidia/apex) (optional)
 ## Quick Started
 ### Pretrained Models
 
-Simply download the weights from [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-blue)](https://huggingface.co/spaces/AIGC-Audio/Make-An-Audio-3/tree/main/useful_ckpts)
+Simply download the 500M weights from [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-blue)](https://huggingface.co/spaces/AIGC-Audio/Make-An-Audio-3/tree/main/useful_ckpts)
 
+ Model     | Pretraining Data   |  Path  
+|-----------|--------------------|--------------------------------------------------------------------------------
+| M (160M)  | AudioCaption       |[Here](https://huggingface.co/spaces/AIGC-Audio/Make-An-Audio-3/tree/main/useful_ckpts)
+| L (520M)  | AudioCaption       |[TBD]
+| XL (750M) | AudioCaption       |[TBD]
+| 3B        | AudioCaption       |[TBD]
+    
 ### Generate audio/music from text
 ```
 python3 scripts/txt2audio_for_2cap_flow.py 
