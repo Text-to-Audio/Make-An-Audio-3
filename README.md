@@ -19,6 +19,19 @@ Visit our [demo page](https://make-an-audio-2.github.io/) for audio samples.
 [//]: # (- May, 2024: **[Make-An-Audio-2]&#40;https://arxiv.org/abs/2207.06389&#41;** released in [Github]&#40;https://github.com/bytedance/Make-An-Audio-2&#41;.)
 [//]: # (- August, 2023: **[Make-An-Audio]&#40;https://arxiv.org/abs/2301.12661&#41; &#40;ICML 2022&#41;** released in [Github]&#40;https://github.com/Text-to-Audio/Make-An-Audio&#41;. )
 
+## Install dependencies
+
+Note: You may want to adjust the CUDA version [according to your driver version](https://docs.nvidia.com/deploy/cuda-compatibility/#default-to-minor-version).
+
+```bash
+conda create -n Make_An_Audio_3 -y
+conda activate Make_An_Audio_3
+conda install python=3.11 pytorch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 pytorch-cuda=12.1 -c pytorch -c nvidia -y
+pip install -r requirements.txt
+pip install flash-attn --no-build-isolation
+Install [nvidia apex](https://github.com/nvidia/apex) (optional)
+```
+
 ## Quick Started
 ### Pretrained Models
 
