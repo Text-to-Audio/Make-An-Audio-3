@@ -54,7 +54,7 @@ def parse_args():
     )
     parser.add_argument(
         "--test-dataset",
-        default="none",
+        default="audio",
         help="test which dataset: testset"
     )
     parser.add_argument(
@@ -151,12 +151,12 @@ class GenSamples:
         if self.opt.scale != 1.0:
             try: # audiocaps
                 uc = self.model.get_learned_conditioning({'ori_caption': "",'struct_caption': ""})
-            except: # audioset
+            except: # audioset, music
                 uc = self.model.get_learned_conditioning(prompt['ori_caption'])
         for n in range(self.opt.n_iter):# trange(self.opt.n_iter, desc="Sampling"):
 
             try: # audiocaps
-                c = self.model.get_learned_conditioning(prompt) # shape:[1,77,1280],即还没有变成句子embedding，仍是每个单词的embedding
+                c = self.model.get_learned_conditioning(prompt) # shape:[1,77,1280],
             except: # audioset
                 c = self.model.get_learned_conditioning(prompt['ori_caption'])
 
@@ -219,32 +219,35 @@ def main():
     
     with torch.no_grad():
         with model.ema_scope():
-            if opt.test_dataset != 'none':
-                if opt.test_dataset == 'testset':
-                    test_dataset = instantiate_from_config(config['test_dataset'])
-                    video = None
-
-                else:
-                    raise NotImplementedError
+            if opt.test_dataset == 'testset':
+                test_dataset = instantiate_from_config(config['test_dataset'])
+                video = None
 
                 print(f"Dataset: {type(test_dataset)} LEN: {len(test_dataset)}")
                 for item in tqdm(test_dataset):
-                    prompt,f_name, gt = item['caption'],item['f_name'],item['image']
-                    vname_num_split_index = f_name.rfind('_')# file_names[b]:video_name+'_'+num
-                    v_n,num = f_name[:vname_num_split_index],f_name[vname_num_split_index+1:]
+                    prompt, f_name, gt = item['caption'], item['f_name'], item['image']
+                    vname_num_split_index = f_name.rfind('_')  # file_names[b]:video_name+'_'+num
+                    v_n, num = f_name[:vname_num_split_index], f_name[vname_num_split_index + 1:]
                     mel_name = f'{v_n}_sample_{num}'
                     wav_name = f'{v_n}_sample_{num}'
                     # write_gt_wav(v_n,opt.test_dataset2,opt.outdir,opt.sample_rate)
-                    csv_dicts.extend(generator.gen_test_sample(prompt, mel_name=mel_name ,wav_name=wav_name, gt=gt, video=video))
-    
-                df = pd.DataFrame.from_dict(csv_dicts)
-                df.to_csv(os.path.join(opt.outdir,'result.csv'),sep='\t',index=False)
-            else:
+                    csv_dicts.extend(generator.gen_test_sample(prompt, mel_name=mel_name, wav_name=wav_name, gt=gt, video=video))
+
+                    df = pd.DataFrame.from_dict(csv_dicts)
+                    df.to_csv(os.path.join(opt.outdir,'result.csv'),sep='\t',index=False)
+
+            elif opt.test_dataset == 'structure':
                 ori_caption = opt.prompt
                 struct_caption = n2s.get_struct(ori_caption)
                 print(f"The structed caption by Chatgpt is : {struct_caption}")
                 wav_name = f'{ori_caption.strip().replace(" ", "-")}'
                 prompt = {'ori_caption':[ori_caption],'struct_caption':[struct_caption]}
+                generator.gen_test_sample(prompt, wav_name=wav_name)
+
+            else:
+                ori_caption = opt.prompt
+                wav_name = f'{ori_caption.strip().replace(" ", "-")}'
+                prompt = {'ori_caption':[ori_caption]}
                 generator.gen_test_sample(prompt, wav_name=wav_name)
 
     print(f"Your samples are ready and waiting four you here: \n{opt.outdir} \nEnjoy.")

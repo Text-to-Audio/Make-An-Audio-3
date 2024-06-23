@@ -47,7 +47,7 @@ model:
       params:
         embed_dim: 20
         monitor: val/rec_loss
-        ckpt_path: /apdcephfs_intern/share_1316500/nlphuang/results/Text_to_audio/ldm_src/ckpt/epoch=000032.ckpt
+        ckpt_path: ldm_src/ckpt/epoch=000032.ckpt
         ddconfig:
           double_z: true
           in_channels: 80
@@ -89,7 +89,7 @@ lightning:
         vocoder_cfg:
           target: vocoder.bigvgan.models.VocoderBigVGAN
           params:
-            ckpt_vocoder: /apdcephfs_intern/share_1316500/nlphuang/results/Text_to_audio/ldm_src/ckpt/bigvnat
+            ckpt_vocoder: ldm_src/ckpt/bigvnat
   trainer:
     benchmark: True
     gradient_clip_val: 1.0
@@ -112,9 +112,9 @@ data:
         dataset_cfg:
           dataset1:
             dataset_name: VGGSound
-            data_dir: /apdcephfs_intern/share_1316500/nlphuang/data/video_to_audio/vggsound/
-            video_dir: /apdcephfs_intern/share_1316500/nlphuang/data/video_to_audio/vggsound/           # Not Necessary Except for Inference
-            split_txt_path: /apdcephfs_intern/share_1316500/nlphuang/data/video_to_audio/vggsound/split_txt
+            data_dir: data/video_to_audio/vggsound/
+            video_dir: data/video_to_audio/vggsound/           # Not Necessary Except for Inference
+            split_txt_path: data/video_to_audio/vggsound/split_txt
 
           feat_type: CAVP_feat
           sr: 16000
@@ -130,9 +130,9 @@ data:
         dataset_cfg:
           dataset1:
             dataset_name: VGGSound
-            data_dir: /apdcephfs_intern/share_1316500/nlphuang/data/video_to_audio/vggsound/
-            video_dir: /apdcephfs_intern/share_1316500/nlphuang/data/video_to_audio/vggsound/           # Not Necessary Except for Inference
-            split_txt_path: /apdcephfs_intern/share_1316500/nlphuang/data/video_to_audio/vggsound/split_txt
+            data_dir: data/video_to_audio/vggsound/
+            video_dir: data/video_to_audio/vggsound/           # Not Necessary Except for Inference
+            split_txt_path: data/video_to_audio/vggsound/split_txt
 
           feat_type: CAVP_feat
           sr: 16000
