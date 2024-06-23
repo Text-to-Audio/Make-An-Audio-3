@@ -2,7 +2,7 @@
 
 PyTorch Implementation of [Lumina-t2x](https://arxiv.org/abs/2405.05945), [Lumina-Next](https://github.com/Alpha-VLLM/Lumina-T2X/blob/main/assets/lumina-next.pdf)
 
-We will provide our implementation and pretrained models as open source in this repository recently.
+We will provide our implementation and pre-trained models as open-source in this repository recently.
 
 [![arXiv](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2305.18474)
 [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-blue)](https://huggingface.co/spaces/AIGC-Audio/Make-An-Audio-3)
