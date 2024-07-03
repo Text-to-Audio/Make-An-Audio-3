@@ -33,21 +33,21 @@ Install [nvidia apex](https://github.com/nvidia/apex) (optional)
 
 Simply download the 500M weights from [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-blue)](https://huggingface.co/spaces/AIGC-Audio/Make-An-Audio-3/tree/main/useful_ckpts)
 
- Model     | Task           | Pretraining Data |  Path  
-|-----------|----------------|------------------|--------------------------------------------------------------------------------
-| M (160M)  | Text-to-Audio  | AudioCaption     |[Here](https://huggingface.co/spaces/AIGC-Audio/Make-An-Audio-3/tree/main/useful_ckpts/audio_generation)
-| L (520M)  | Text-to-Audio  | AudioCaption     |[TBD]
-| XL (750M) | Text-to-Audio  | AudioCaption     |[TBD]
-| 3B        | Text-to-Audio  | AudioCaption     |[TBD]
-| M (160M)  | Text-to-Music  | Music            |[Here](https://huggingface.co/spaces/AIGC-Audio/Make-An-Audio-3/tree/main/useful_ckpts/music_generation)
-| L (520M)  | Text-to-Music  | Music            |[TBD]
-| XL (750M) | Text-to-Music  | Music            |[TBD]
-| 3B        | Text-to-Music   | Music            |[TBD]
-| M (160M)  | Video-to-Audio | VGGSound         |[Here](https://huggingface.co/spaces/AIGC-Audio/Make-An-Audio-3/tree/main/useful_ckpts/video2audio)
+ Model     | Config                  | Pretraining Data |  Path  
+|-----------|-------------------------|------------------|--------------------------------------------------------------------------------
+| M (160M)  | txt2audio-cfm-cfg       | AudioCaption     |[TBD]
+| L (520M)  | /                       | AudioCaption     |[TBD]
+| XL (750M) | txt2audio-cfm-cfg-XL    | AudioCaption     |[Here](https://huggingface.co/AIGC-Audio/Make-An-Audio-3/tree/main)
+| 3B        | /                       | AudioCaption     |[TBD]
+| M (160M)  | txt2music-cfm-cfg       | Music            |[Here](https://huggingface.co/spaces/AIGC-Audio/Make-An-Audio-3/tree/main/useful_ckpts/music_generation)
+| L (520M)  | /                       | Music            |[TBD]
+| XL (750M) | /                       | Music            |[TBD]
+| 3B        | /                       | Music            |[TBD]
+| M (160M)  | video2audio-cfm-cfg-moe | VGGSound         |[Here](https://huggingface.co/spaces/AIGC-Audio/Make-An-Audio-3/tree/main/useful_ckpts/video2audio)
 ### Generate audio/music from text
 ```
 python3 scripts/txt2audio_for_2cap_flow.py  --prompt {TEXT}
---outdir output_dir -r  checkpoints_last.ckpt  -b configs/txt2audio-cfm1-cfg-LargeDiT3.yaml --scale 3.0 
+--outdir output_dir -r  checkpoints_last.ckpt  -b configs/txt2audio-cfm-cfg.yaml --scale 3.0 
 --vocoder-ckpt useful_ckpts/bigvnat 
 ```
 Add `--test-dataset structure` for text-to-audio generation
@@ -56,14 +56,14 @@ Add `--test-dataset structure` for text-to-audio generation
 - remember to alter `config["test_dataset"]`
 ```
 python3 scripts/txt2audio_for_2cap_flow.py
---outdir output_dir -r  checkpoints_last.ckpt  -b configs/txt2audio-cfm1-cfg-LargeDiT3.yaml --scale 3.0 
+--outdir output_dir -r  checkpoints_last.ckpt  -b configs/txt2audio-cfm-cfg.yaml --scale 3.0 
 --vocoder-ckpt useful_ckpts/bigvnat --test-dataset testset
 ```
 
 ### Generate audio from video
 ```
 python3 scripts/video2audio_flow.py 
---outdir output_dir -r  checkpoints_last.ckpt  -b configs/video2audio-cfm1-cfg-LargeDiT1-moe.yaml --scale 3.0 
+--outdir output_dir -r  checkpoints_last.ckpt  -b configs/video2audio-cfm-cfg-moe.yaml --scale 3.0 
 --vocoder-ckpt useful_ckpts/bigvnat --test-dataset vggsound 
 ```
 
@@ -71,7 +71,7 @@ python3 scripts/video2audio_flow.py
 After trainning VAE, replace model.params.first_stage_config.params.ckpt_path with your trained VAE checkpoint path in the config file.
 Run the following command to train Diffusion model
 ```
-python main.py --base configs/txt2audio-cfm1-cfg-LargeDiT3.yaml -t  --gpus 0,1,2,3,4,5,6,7
+python main.py --base configs/txt2audio-cfm-cfg.yaml -t  --gpus 0,1,2,3,4,5,6,7
 ```
 ## Others
 For Data preparation, Training variational autoencoder, Evaluation, Please refer to [Make-An-Audio](https://github.com/liuhuadai/AudioLCM?tab=readme-ov-file#dataset-preparation).
