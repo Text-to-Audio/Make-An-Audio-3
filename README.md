@@ -35,10 +35,10 @@ Simply download the 500M weights from [![Hugging Face](https://img.shields.io/ba
 
  Model     | Config                  | Pretraining Data |  Path  
 |-----------|-------------------------|------------------|--------------------------------------------------------------------------------
-| M (160M)  | txt2audio-cfm-cfg       | AudioCaption     |[TBD]
+| M (160M)  | txt2audio-cfm-cfg       | AudioCaption     |[TBD](https://huggingface.co/AIGC-Audio/Make-An-Audio-3/tree/main/text2audio/M)
 | L (520M)  | /                       | AudioCaption     |[TBD]
-| XL (750M) | txt2audio-cfm-cfg-XL    | AudioCaption     |[Here](https://huggingface.co/AIGC-Audio/Make-An-Audio-3/tree/main)
-| 3B        | /                       | AudioCaption     |[TBD]
+| XL (750M) | txt2audio-cfm-cfg-XL    | AudioCaption     |[Here](https://huggingface.co/AIGC-Audio/Make-An-Audio-3/tree/main/text2audio/XL)
+| XXL       | txt2audio-cfm-cfg-XXL   | AudioCaption     |[Here](https://huggingface.co/AIGC-Audio/Make-An-Audio-3/tree/main/text2audio/XXL)
 | M (160M)  | txt2music-cfm-cfg       | Music            |[Here](https://huggingface.co/spaces/AIGC-Audio/Make-An-Audio-3/tree/main/useful_ckpts/music_generation)
 | L (520M)  | /                       | Music            |[TBD]
 | XL (750M) | /                       | Music            |[TBD]
