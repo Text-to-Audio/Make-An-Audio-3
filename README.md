@@ -87,7 +87,32 @@ as described in our code.
 
 ## Citations ##
 If you find this code useful in your research, please consider citing:
-```bibtex
+```
+@article{gao2024lumina-next,
+  title={Lumina-Next: Making Lumina-T2X Stronger and Faster with Next-DiT},
+  author={Zhuo, Le and Du, Ruoyi and Han, Xiao and Li, Yangguang and Liu, Dongyang and Huang, Rongjie and Liu, Wenze and others},
+  journal={arXiv preprint arXiv:2406.18583},
+  year={2024}
+}
+```
+
+```
+@article{huang2023make,
+  title={Make-an-audio: Text-to-audio generation with prompt-enhanced diffusion models},
+  author={Huang, Rongjie and Huang, Jiawei and Yang, Dongchao and Ren, Yi and Liu, Luping and Li, Mingze and Ye, Zhenhui and Liu, Jinglin and Yin, Xiang and Zhao, Zhou},
+  journal={arXiv preprint arXiv:2301.12661},
+  year={2023}
+}
+```
+
+```
+@article{gao2024lumin-t2x,
+  title={Lumina-T2X: Transforming Text into Any Modality, Resolution, and Duration via Flow-based Large Diffusion Transformers},
+  author={Gao, Peng and Zhuo, Le and Liu, Chris and and Du, Ruoyi and Luo, Xu and Qiu, Longtian and Zhang, Yuhang and others},
+  journal={arXiv preprint arXiv:2405.05945},
+  year={2024}
+}
+
 ```
 
 # Disclaimer ##
