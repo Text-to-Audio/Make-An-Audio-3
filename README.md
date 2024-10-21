@@ -11,7 +11,7 @@ We will provide our implementation and pre-trained models as open-source in this
 
 ## News
 - Oct, 2024: **[FashAudio](https://arxiv.org/abs/2410.12266)** released.
-- Sept, 2024: **Lumina-Next](https://github.com/Text-to-Audio/Make-An-Audio-3)** accepted by NeurIPS'24.
+- Sept, 2024: **[Lumina-Next](https://github.com/Text-to-Audio/Make-An-Audio-3)** accepted by NeurIPS'24.
 - July, 2024: **[AudioLCM](https://arxiv.org/abs/2406.00356v1)** accepted by ACM-MM'24.
 - June, 2024: **[Make-An-Audio 3 (Lumina-Next)](https://github.com/Text-to-Audio/Make-An-Audio-3)** released in Github and HuggingFace.
 - May, 2024: **[AudioLCM](https://arxiv.org/abs/2406.00356v1)** released in Github and HuggingFace.
