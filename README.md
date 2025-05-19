@@ -10,6 +10,7 @@ We will provide our implementation and pre-trained models as open-source in this
 
 
 ## News
+- May, 2025: **[FlashAudio](https://arxiv.org/abs/2410.12266)** accepted by ACL 2025 Main.
 - Oct, 2024: **[FlashAudio](https://arxiv.org/abs/2410.12266)** released.
 - Sept, 2024: **[Lumina-Next](https://github.com/Text-to-Audio/Make-An-Audio-3)** accepted by NeurIPS'24.
 - July, 2024: **[AudioLCM](https://arxiv.org/abs/2406.00356v1)** accepted by ACM-MM'24.
